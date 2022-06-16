@@ -1,0 +1,1055 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Dashboard - TradeStore</title>
+
+    <link rel="stylesheet" href="CSS/index.css">
+
+    <script src="https://kit.fontawesome.com/15605ef36e.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+
+    <!-- datatable -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+</head>
+
+<body id="body-pd" class="body snippet-body">
+    <header class="header " id="header">
+        <!-- bars -->
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <!-- bell -->
+        <div class="d-flex justify-content-evenly">
+            <div class=" header_img mb-2 d-flex">
+                <label class="p-0" style="background-color: #ffffff00; border: none; margin-right: 5rem;">
+                    <label class="position-relative btn-bell" style="margin-top: 0.8rem;">
+                        <i class="fa-solid fa-bell mov-icon-bell"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1">
+                            <span style="font-size: 8.5px;">99+</span>
+                        </span>
+                    </label>
+                </label>
+            </div>
+
+            <div class=" header_img mb-2 d-flex">
+                <label class="dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="background-color: #ffffff00; border-radius: 50px; border: #ffaf02 2px; cursor: pointer;">
+                    <div class="mb-1"> <img src="IMG/undraw_profile.svg" height="45" alt=""> </div>
+                </label>
+                <ul class="dropdown-menu mt-3 ">
+                    <li>
+                        <a class="dropdown-item me-3 dropdown-navbar-top" href="#">
+                            <i class='fa fa-user mt-1'></i>
+                            &nbsp; &nbsp; Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item dropdown-navbar-top" href="#">
+                            <i class="fa-solid fa-user-gear"></i>
+                            &nbsp; &nbsp;Configuraciones
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item dropdown-navbar-top" href="#">
+                            <i class="fa-solid fa-envelope"></i>
+                            &nbsp; &nbsp; Bandeja de comentarios
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item dropdown-navbar-top" href="#">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            &nbsp; &nbsp; Cerrar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav container-fluid">
+                <div class="content-sidebar-menu hidden-xs" id="sidebar_menu" style="margin-right: -67px;">
+                    <a href="#" class="nav_logo">
+                        <i class='bx bx-layer nav_logo-icon'></i>
+                        <span class="nav_logo-name" style="margin-left: 3px;">TradeStore</span>
+                    </a>
+                    <div class="nav_list nav-dialog-scrollable">
+                        <a href="#" class="nav_link activo">
+                            <i class="fa-solid fa-house-chimney nav_icon"></i>
+                            <span class="nav_name">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-chart-line nav_icon"></i>
+                            <span class="nav_name">Analíticas</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-list nav_icon"></i>
+                            <span class="nav_name">Categorías</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-cubes nav_icon"></i>
+                            <span class="nav_name">Productos</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-cart-plus nav_icon"></i>
+                            <span class="nav_name">órdenes</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-coins nav_icon"></i>
+                            <span class="nav_name">Contabilidad</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-users nav_icon"></i>
+                            <span class="nav_name">Clientes</span>
+                        </a>
+                        <a href="#" class="nav_link">
+                            <i class="fa-solid fa-shop nav_icon"></i>
+                            <span class="nav_name">Vendedores</span>
+                        </a>
+                        <a href="#" class="nav_link ">
+                            <span>
+                                <i class="fa-solid fa-building nav_icon position-absolute"
+                                    style="margin-left: 9px;"></i>
+                                <i class="fa-solid fa-gear fa-sm nav_icon position-absolute"
+                                    style=" margin-top: 15px; color: #cdcdcd;"></i>
+                                <span class="nav_name" style="margin-left: 40.5px;">Ajustes la Emperesa</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-log-out nav_icon'></i>
+                    <span class="nav_name">SignOut</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!--Container Main start-->
+    <main>
+        <div class="div-content-main">
+
+            <div class="chartJS-dashboard">
+
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content ">
+
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid">
+
+                            <!-- Page Heading -->
+
+                            <div class="index-pag">
+                                <h4>
+                                    Dashboard
+                                </h4>
+                            </div>
+
+                            <!-- Content Row -->
+                            <div class="row">
+
+                                <div class="col-xl-3 col-md-6 mb-4 cart-dash-hover">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1 "
+                                                        style="font-weight: bold;">
+                                                        Ganancias Totales</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">S/.40,000</div>
+                                                    <a class="mb-0 mt-3 ver-detalle-link" href="#">Ver detalle de
+                                                        ganacias</a>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fa-solid fa-hand-holding-dollar fa-2x text-gray-300"
+                                                        style="color: #16b016;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4 cart-dash-hover">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1 "
+                                                        style="font-weight: bold;">
+                                                        órdenes</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">12,124.00k</div>
+                                                    <a class="mb-0 mt-3 ver-detalle-link" href="#">Ver todos los
+                                                        órdenes</a>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fa-solid fa-cart-plus fa-2x" style="color: #1e7ff6;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4 cart-dash-hover">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1 "
+                                                        style="font-weight: bold;">
+                                                        Órdenes de devolución</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1,124.00k</div>
+                                                    <a class="mb-0 mt-3 ver-detalle-link" href="#">Ver todos los
+                                                        órdenes</a>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fa-solid fa-cart-arrow-down fa-2x"
+                                                        style="color: #cd1616;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4 cart-dash-hover">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1 "
+                                                        style="font-weight: bold;">
+                                                        Quejas Totales</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">124.00</div>
+                                                    <a class="mb-0 mt-3 ver-detalle-link" href="#">Ver todos los
+                                                        órdenes</a>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fa-solid fa-triangle-exclamation fa-2x"
+                                                        style="color: #ffaf02;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-7 col-lg-7">
+                                    <!-- Bar Chart -->
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-secondary" style="font-weight: 800;">
+                                                INGRESOS - (comparación)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="chart-bar">
+                                                <canvas id="myAreaChart" height="100"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Donut Chart -->
+                                <div class="col-xl-5 col-lg-5">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3 d-flex justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">Ventas Mensuales</h6>
+
+                                            <i class="fa-solid fa-triangle-exclamation"
+                                                style="color: #ffaf02; font-size: 20px;"></i>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div class="chart-pie pt-4">
+                                                <canvas id="myPieChart"></canvas>
+                                            </div>
+                                            <hr>
+                                            Styling for the donut chart can be found in the
+                                            <code>/js/demo/chart-pie-demo.js</code> file.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xl-7 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3 d-flex justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-secondary" style="font-weight: 800;">
+                                            Productos más vendidos</h6>
+                                        <span>
+                                            Ordenar por:
+                                            <i class="fa-solid fa-triangle-exclamation"
+                                                style="color: #ffaf02; font-size: 20px;"></i>
+                                        </span>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body " style=" overflow: auto; height: 500px;">
+
+                                        <table class="table align-middle mb-0 bg-white table-hover" id="table_Permisos">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th scope="col">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input checkAll-checkbox"
+                                                                type="checkbox" value="" id="flexCheckDefault"
+                                                                onclick="checkAll(this)">
+                                                        </div>
+                                                    </th>
+                                                    <th>Name</th>
+                                                    <th>Title</th>
+                                                    <th>Status</th>
+                                                    <th>Position</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                                                alt="" style="width: 45px; height: 45px"
+                                                                class="rounded-circle" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">John Doe</p>
+                                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Software engineer</p>
+                                                        <p class="text-muted mb-0">IT department</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-success rounded-pill d-inline">Activo</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Alex Ray</p>
+                                                                <p class="text-muted mb-0">blex.ray@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Consultant</p>
+                                                        <p class="text-muted mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-primary rounded-pill d-inline">Deshabilitado</span>
+                                                    </td>
+                                                    <td>Junior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1"
+                                                    aria-disabled="true">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-7 col-lg-12">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3 d-flex justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-secondary" style="font-weight: 800;">
+                                            Productos populares</h6>
+
+                                        <span>
+                                            Ordenar por:
+                                            <i class="fa-solid fa-triangle-exclamation"
+                                                style="color: #ffaf02; font-size: 20px;"></i>
+                                        </span>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body" style="overflow: auto; height: 500px;">
+
+                                        <table id="example" class="table align-middle mb-0 bg-white table-hover "
+                                            style="width:100%">
+                                            <thead class="bg-light sticky-top">
+                                                <tr>
+                                                    <th scope="col">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input checkAll-checkbox"
+                                                                type="checkbox" value="" id="flexCheckDefault"
+                                                                onclick="checkAll(this)">
+                                                        </div>
+                                                    </th>
+                                                    <th>Name</th>
+                                                    <th>Title</th>
+                                                    <th>Status</th>
+                                                    <th>Position</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                                                alt="" style="width: 45px; height: 45px"
+                                                                class="rounded-circle" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">John Doe</p>
+                                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Software engineer</p>
+                                                        <p class="text-muted mb-0">IT department</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-success rounded-pill d-inline">Activo</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Alex Ray</p>
+                                                                <p class="text-muted mb-0">blex.ray@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Consultant</p>
+                                                        <p class="text-muted mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-primary rounded-pill d-inline">Deshabilitado</span>
+                                                    </td>
+                                                    <td>Junior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault" />
+                                                        </div>
+                                                    </th>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                                                class="rounded-circle" alt=""
+                                                                style="width: 45px; height: 45px" />
+                                                            <div class="ms-3">
+                                                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fw-normal mb-1">Designer</p>
+                                                        <p class="text-muted mb-0">UI/UX</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge btn-warning rounded-pill d-inline">Bloqueado</span>
+                                                    </td>
+                                                    <td>Senior</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-link btn-rounded btn-sm fw-bold"
+                                                            data-mdb-ripple-color="dark">
+                                                            Edit
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-dark-nocollapsed">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2020</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+
+        </div>
+
+        <div>
+
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aut vitae earum expedita, nobis minima
+            cumque
+            consequatur nam repellat vel similique tempora quia rerum tempore possimus perferendis? Accusantium
+            tenetur
+            enim magni exercitationem odit quae sequi fugit tempora! Natus id iusto est ea, dolorum cumque
+            perspiciatis
+            debitis enim quidem autem quisquam fugiat amet perferendis corporis facilis animi obcaecati? Quaerat,
+            fugiat
+            aut ab asperiores modi nostrum ut sed rem, aperiam eligendi similique atque. Delectus maiores unde
+            fugiat
+            mollitia laboriosam earum nihil explicabo nulla. Saepe, atque molestiae quis repudiandae ea consequuntur
+            minima esse distinctio vitae sunt mollitia earum aliquid sint enim impedit cumque cum? Perferendis
+            repellendus sit, praesentium atque voluptatum doloremque repellat quas? Sed harum eius, vitae ipsum
+            reiciendis animi obcaecati eaque fugit consequatur incidunt accusantium optio, soluta, ipsam excepturi
+            at
+            veritatis adipisci similique! Dignissimos expedita quas error eligendi recusandae laborum minima rem
+            illo,
+            ut aspernatur, quibusdam ad enim odio culpa soluta ratione voluptatem eum eaque facilis dolor?
+            Architecto
+            quisquam ea, ut magnam tempore nulla at commodi qui quasi corporis molestiae porro dicta dolor! Dolorem
+            odio
+            in dolor accusantium reiciendis veniam libero ex cum quidem. Voluptates voluptatem consequuntur
+            consequatur!
+            Veritatis deserunt vel nulla placeat minima. Itaque, eos. Autem ratione animi illo qui provident ipsam
+            possimus repudiandae, nostrum nemo nesciunt accusamus ullam? Corrupti temporibus magni officiis tempora
+            recusandae vitae earum accusamus commodi dignissimos expedita esse laudantium ratione distinctio quidem
+            error magnam consectetur impedit perspiciatis consequuntur animi autem, quasi eaque! Repudiandae modi
+            perspiciatis eaque possimus excepturi rerum iste ab quaerat corporis magnam, error at incidunt qui
+            numquam
+            magni eius ullam unde. Officiis error consectetur assumenda iusto, eligendi corporis repellendus
+            cupiditate
+            in! Similique placeat quia vitae, quidem veritatis modi obcaecati! Beatae est veritatis ipsam cumque
+            magni
+            sapiente. Consequatur doloremque, eligendi autem qui totam nihil ducimus eveniet deleniti perspiciatis.
+            Dolore, consequuntur consequatur aut eius voluptates dignissimos magni odit laborum aperiam temporibus
+            fuga
+            corrupti velit autem sit minima nam eos veniam voluptatum quasi maxime delectus provident! Iusto eos
+            saepe
+            labore nisi perferendis nostrum sequi reiciendis quisquam possimus aperiam consequatur, iure architecto
+            quia
+            temporibus excepturi nemo dolore voluptatibus deserunt laudantium voluptates beatae laboriosam
+            accusantium
+            quae? Consequatur deleniti, tempore, accusantium ratione voluptates, soluta inventore adipisci deserunt
+            quos
+            quo itaque quibusdam vitae maxime aperiam ipsa aliquid reprehenderit optio eveniet odio totam debitis
+            quis
+            autem! Facere voluptates non quae qui, nulla repellat labore accusamus soluta mollitia eius expedita,
+            temporibus molestias incidunt doloribus dolor at. Iusto quas dolorem ut. Accusantium tempora doloribus,
+            aperiam magnam voluptas, voluptates ex hic assumenda nobis reiciendis omnis rem distinctio minima
+            debitis ut
+            veniam expedita, labore cumque fuga. Ratione obcaecati doloremque quo fugit cupiditate porro incidunt
+            nulla,
+            nesciunt culpa consequatur earum amet reiciendis reprehenderit mollitia, dolore voluptatibus assumenda,
+            exercitationem at temporibus animi? Tempora eveniet quas et labore, iste ut ab quidem non! Perferendis,
+            a.
+            Sed ab quibusdam a illum reiciendis nulla eum totam atque dolorem placeat qui necessitatibus, doloribus,
+            corporis, temporibus vero voluptates praesentium? Eaque nobis esse sunt blanditiis itaque excepturi
+            ducimus
+            laborum sint, repellendus necessitatibus veniam laudantium perspiciatis mollitia recusandae eos vitae
+            provident modi. Expedita, itaque ipsa et non aliquam nobis. Illum sequi assumenda omnis ratione
+            similique
+            impedit autem, molestias repellat? Doloribus expedita deserunt, temporibus odit consequuntur excepturi
+            itaque, sapiente fuga natus quia qui facilis dolor architecto provident dolore reprehenderit quae ea
+            pariatur esse quod vero cumque? Aliquam nesciunt officia harum ipsum dolor beatae deleniti, eveniet
+            nostrum
+            accusamus aperiam quae, temporibus ipsam aliquid adipisci itaque totam iste error sunt voluptas porro
+            minima
+            vero. Repudiandae atque facere vitae voluptatem a sapiente illo recusandae explicabo. Vel maxime aut
+            illo
+            harum ipsa tenetur nulla, non iure ratione architecto, amet esse suscipit commodi eveniet fuga
+            perspiciatis
+            accusantium minima ut magni asperiores tempora eius dignissimos. Excepturi sint hic numquam quo minus
+            omnis
+            eum ullam nemo reprehenderit eveniet cumque ipsum suscipit aliquid dolorem atque, facere praesentium.
+            Non
+            aspernatur ducimus molestiae explicabo minima nisi veritatis vitae voluptatum deserunt necessitatibus,
+            dolore suscipit debitis rerum molestias vero distinctio? Culpa laboriosam sed doloribus numquam,
+            officiis
+            dolores autem nemo omnis quaerat neque, impedit aliquam eos atque optio quae adipisci vel. Minima
+            possimus
+            aliquid totam sunt sint impedit vitae quod sed esse distinctio reiciendis, fugiat corporis quo placeat
+            exercitationem aliquam iure, temporibus sequi? Nam nulla soluta accusantium sunt ad repudiandae, quam,
+            dolorem perspiciatis, ex assumenda error deserunt tenetur saepe amet consectetur voluptatem impedit
+            consequatur placeat suscipit adipisci consequuntur rem similique quae? Quaerat excepturi facilis quasi,
+            dignissimos deleniti tempora adipisci ex! Cumque reiciendis ipsam quis impedit corrupti. Libero
+            excepturi
+            illum, architecto omnis optio eveniet dolorum nam tempore fugit. Nemo quo asperiores iure quis est!
+            Neque
+            culpa tempore asperiores, saepe architecto quo maiores excepturi deserunt similique, sunt nam quis eos
+            sequi
+            nostrum id adipisci aut cupiditate voluptatem assumenda quisquam ex itaque provident qui. Enim,
+            recusandae,
+            rem eveniet perferendis ipsa quibusdam quia quam ullam dicta ducimus magni voluptas labore hic quaerat.
+            Repellat nihil earum hic magni. Nobis officia magnam quidem qui laboriosam quaerat nisi id praesentium
+            ex,
+            itaque modi, quod dolorem. Velit impedit recusandae voluptatibus nostrum explicabo, a delectus commodi
+            eaque
+            omnis ullam nulla. Asperiores non tempore quisquam voluptatibus libero, obcaecati quae? Veritatis
+            provident,
+            repellat cupiditate eum iusto minus! Hic incidunt nihil, vel totam provident distinctio, rerum, minus
+            ipsa
+            quasi repellendus architecto eveniet quae sunt. Nemo molestiae repudiandae corporis in quod voluptatem
+            illo
+            molestias. Earum autem dolor alias non tenetur, ad atque placeat in! Voluptates expedita, aliquam
+            eligendi
+            eos natus, at repudiandae nostrum cupiditate illo sapiente harum cum voluptate eveniet! Numquam facere
+            natus
+            harum debitis quos autem vero dolorum, nesciunt hic libero et dolor reiciendis, repellendus quis non,
+            totam
+            magni pariatur illo vel quasi cum fugiat rem? Quo vitae quam recusandae ipsum labore possimus rem dicta
+            et
+            cupiditate neque dolores praesentium pariatur totam quibusdam, animi culpa optio aut ut, dolorem non.
+            Illum,
+            iure sequi iste nam reiciendis animi? Optio asperiores architecto itaque fugiat accusamus blanditiis
+            saepe
+            debitis ex ut voluptatibus? Saepe velit, blanditiis cupiditate fugiat dolorum, minus tenetur aspernatur
+            nulla veritatis sit error obcaecati nihil, aut fugit quaerat illo perspiciatis eum ab officia laboriosam
+            sequi. Dolores ex nostrum, recusandae, saepe veniam incidunt repudiandae accusamus dicta alias ipsa vero
+            veritatis repellendus a at doloremque.
+        </div>
+        </div>
+    </main>
+    <!--Container Main end-->
+
+    <!-- Footer 
+    <footer class="footer " id="footer">
+        <div class="bg-primary text-white text-center fixed-bottom footer-content header_toggle" id="header-toggle">
+        -->
+    <!-- Copyright
+            <div class="text-center p-3" style="background-color: #00000033">
+                © 2022 Copyright:
+                <a class="text-white" href="#">TradeStore </a>
+            </div> -->
+    <!-- Copyright 
+        </div>
+    </footer>-->
+    <!-- End Footer -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
+    <script type='text/javascript' src="JS/sidebar_lateral.js"></script>
+
+</body>
+
+</html>
